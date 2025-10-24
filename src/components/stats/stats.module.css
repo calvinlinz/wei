@@ -1,0 +1,29 @@
+.section {
+  padding: 4rem 5%;
+  background: #fff;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  text-align: center;
+}
+
+.card {
+  min-width: 180px;
+}
+
+.card h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #199944;
+}
+
+.card p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #444;
+  margin-top: 0.5rem;
+}
