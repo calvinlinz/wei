@@ -1,0 +1,197 @@
+.gallerySection {
+  position: relative;
+  padding: 8rem 20%;
+  text-align: center;
+  overflow: hidden;
+  color: #fff; /* text will stand out against the dark background */
+}
+
+/* === Background image and dark overlay === */
+.gallerySection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.682), rgba(0, 0, 0, 0.55)), 
+    url("../../../public/background_photo.jpeg") center/cover no-repeat; /* replace with your image */
+  z-index: 0;
+  opacity: 1;
+}
+
+.title,
+.subtitle,
+.galleryGrid {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 3rem;
+}
+
+/* ===== Desktop Grid ===== */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(4px);
+}
+
+.imageWrapper:hover {
+  transform: scale(1.03);
+  filter: brightness(0.9);
+}
+
+.image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.caption {
+  margin-top: 0.6rem;
+  font-size: 1rem;
+  color: #333;
+  font-style: italic;
+}
+
+/* ===== Lightbox ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.25s ease;
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+}
+
+.lightboxContent {
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightboxContent img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightboxCaption {
+  margin-top: 1.5rem;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.closeButton {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2001;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Mobile Carousel ===== */
+@media (max-width: 768px) {
+  .gallerySection {
+    padding: 6rem 8%;
+  }
+
+  .galleryGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.2rem;
+    padding-bottom: 1rem;
+  }
+
+  .imageWrapper {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+  }
+
+  .image {
+    height: 220px;
+  }
+
+  .closeButton {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+
+  .lightboxCaption {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+}

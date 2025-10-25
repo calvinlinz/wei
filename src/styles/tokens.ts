@@ -1,12 +1,7 @@
 // Central design tokens shared across all components
 
 export const colors = {
-  primary: "#199944",
-  primaryHover: "#16c25f",
-  text: "#333",
-  background: "#f6f6f6",
-  subtleText: "#555",
-  border: "#ddd",
+  brand: "#b6271c",
 };
 
 export const spacing = {

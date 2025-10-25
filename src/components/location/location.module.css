@@ -1,0 +1,71 @@
+.section {
+  padding: 6rem 5%;
+  background: #f9f9f9;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* consistent spacing between text and map */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* tighter spacing between title, tagline, address, invite */
+  max-width: 500px; /* prevents lines from being too long */
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #111;
+  margin-bottom:0;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: #444;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.address {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+
+.invite {
+  font-size: 1rem;
+  color: #444;
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+.mapContainer {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .mapContainer iframe {
+    height: 300px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .tagline, .address, .invite {
+    font-size: 1rem;
+  }
+}

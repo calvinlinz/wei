@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "./components/navbar";
 import Hero from "./components/hero";
-import Services from "./components/services";
-import Work from "./components/work";
-import Stats from "./components/stats";
-import Contact from "./components/contact";
+import About from "./components/about";
+import Location from "./components/location";
 import Footer from "./components/footer";
+import GallerySection from "./components/gallery";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,10 +20,9 @@ export default function App() {
         closeMenu={closeMenu}
       />
       <Hero />
-      <Services />
-      <Work />
-      <Stats />
-      <Contact />
+      <About />
+      <GallerySection />
+      <Location />
       <Footer />
     </>
   );

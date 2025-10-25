@@ -11,14 +11,25 @@ export default function Navbar({ isMenuOpen, toggleMenu, closeMenu }: NavbarProp
   return (
     <>
       <nav className={styles.nav}>
-        <div className={styles.logo}>yumamedia</div>
+        <div className={styles.logo}>
+          <a href="#home" onClick={closeMenu}>
+            wei thorndon
+          </a>
+        </div>
 
         <ul className={styles.navLinks}>
-          <li><a href="#home">home</a></li>
-          <li><a href="#services">services</a></li>
-          <li><a href="#work">work</a></li>
-          <li><a href="#contact">contact</a></li>
-          <li><a href="https://www.foodbooking.com/api/fb/yxl_z_r">Order</a></li>
+          <li>
+            <a href="#about">about</a>
+          </li>
+          <li>
+            <a href="#food-gallery">food gallery</a>
+          </li>
+          <li>
+            <a href="#contact">contact</a>
+          </li>
+          <li className={styles.orderButton}>
+            <a href="https://www.foodbooking.com/api/fb/yxl_z_r">order now</a>
+          </li>
         </ul>
 
         <div
@@ -34,10 +45,18 @@ export default function Navbar({ isMenuOpen, toggleMenu, closeMenu }: NavbarProp
       <div
         className={`${styles.navOverlay} ${isMenuOpen ? styles.active : ""}`}
       >
-        <a href="#home" onClick={closeMenu}>home</a>
-        <a href="#services" onClick={closeMenu}>services</a>
-        <a href="#work" onClick={closeMenu}>work</a>
-        <a href="#contact" onClick={closeMenu}>contact</a>
+        <a href="#home" onClick={closeMenu}>
+          home
+        </a>
+        <a href="#services" onClick={closeMenu}>
+          services
+        </a>
+        <a href="#work" onClick={closeMenu}>
+          work
+        </a>
+        <a href="#contact" onClick={closeMenu}>
+          contact
+        </a>
       </div>
     </>
   );

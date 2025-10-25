@@ -17,13 +17,18 @@ export default function Hero() {
 
   return (
     <section className={styles.hero} id="home">
-      <video ref={videoRef} autoPlay muted loop playsInline className={styles.videoBg}>
-        <source src="/yumamediavideo.mp4" type="video/mp4" />
-      </video>
+      <img src="/wei_food.avif" className={styles.videoBg} />
       <div className={styles.heroContent}>
-        <h1>yumamedia</h1>
-        <p className={styles.tagline}>we build campaigns that move people — and your business.</p>
-        <a href="#contact" className={styles.ctaButton}>let's talk</a>
+        <h1>wei thorndon</h1>
+        <p className={styles.tagline}>
+          your local chinese takeaway and restaurant.
+        </p>
+        <a
+          href="https://www.foodbooking.com/api/fb/yxl_z_r"
+          className={styles.ctaButton}
+        >
+          order now
+        </a>
       </div>
     </section>
   );
