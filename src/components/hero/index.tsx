@@ -21,7 +21,7 @@ export default function Hero() {
       <div className={styles.heroContent}>
         <h1>wei thorndon</h1>
         <p className={styles.tagline}>
-          your local chinese takeaway and restaurant.
+          your local chinese takeaway and restaurant
         </p>
         <a
           href="https://www.foodbooking.com/api/fb/yxl_z_r"
