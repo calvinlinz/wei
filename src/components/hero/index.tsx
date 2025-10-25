@@ -17,7 +17,7 @@ export default function Hero() {
 
   return (
     <section className={styles.hero} id="home">
-      <img src="/wei_food.avif" className={styles.videoBg} />
+      <img src="/wei_food.avif" alt="food banner" className={styles.videoBg} />
       <div className={styles.heroContent}>
         <h1>wei thorndon</h1>
         <p className={styles.tagline}>
